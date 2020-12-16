@@ -33,7 +33,6 @@ public class LinkedList<T> implements Collection<T> {
 
   @Override
   public void clear() {
-
   }
 
   @Override
@@ -41,9 +40,9 @@ public class LinkedList<T> implements Collection<T> {
     return false;
   }
 
-  class LinkedListNode<T> {
+  static class LinkedListNode<T> {
 
-    private T value;
+    private final T value;
     private LinkedListNode<T> next;
 
     public LinkedListNode(T value) {
