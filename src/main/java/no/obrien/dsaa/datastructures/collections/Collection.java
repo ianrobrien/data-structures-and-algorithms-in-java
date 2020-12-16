@@ -10,6 +10,6 @@ public interface Collection<T> {
 
   void clear();
 
-  boolean exists(T item);
+  boolean contains(T item);
 
 }

@@ -36,7 +36,15 @@ public class LinkedList<T> implements Collection<T> {
   }
 
   @Override
-  public boolean exists(T item) {
+  public boolean contains(T item) {
+    LinkedListNode<T> current = this.head;
+    while (current != null) {
+      if (current.getValue() == item) {
+        return true;
+      }
+      current = current.getNext();
+    }
+
     return false;
   }
 
