@@ -1,0 +1,29 @@
+package no.obrien.dsaa.datastructures.collections.stacks;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class LinkedListStackTest {
+
+  @Test
+  void testConstruction() {
+    Stack<Integer> stack = new LinkedListStack<>();
+    assertEquals(0, stack.size());
+  }
+
+  @Test
+  void testPushPop() {
+    Stack<Integer> stack = new LinkedListStack<>();
+    final int testValue = 456;
+
+    stack.push(testValue);
+
+    assertEquals(1, stack.size());
+    assertEquals(testValue, stack.peek());
+
+    int result = stack.pop();
+    assertEquals(testValue, result);
+    assertEquals(0, stack.size());
+  }
+}

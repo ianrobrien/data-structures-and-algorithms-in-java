@@ -12,4 +12,5 @@ public interface Collection<T extends Comparable<T>> {
 
   boolean contains(T item);
 
+  boolean isEmpty();
 }

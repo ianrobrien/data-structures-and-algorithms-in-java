@@ -1,11 +1,13 @@
 package no.obrien.dsaa.models;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Calendar;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode
 public class Person implements Comparable<Person> {
 
   private final String firstName;
@@ -17,7 +19,7 @@ public class Person implements Comparable<Person> {
   private final List<Person> children;
 
   @Override
-  public int compareTo(Person o) {
-    return 0;
+  public int compareTo(Person other) {
+    return this.dateOfBirth.compareTo(other.getDateOfBirth());
   }
 }

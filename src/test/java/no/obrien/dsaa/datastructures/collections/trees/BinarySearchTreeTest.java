@@ -47,5 +47,4 @@ class BinarySearchTreeTest {
     assertFalse(binarySearchTree.contains(9));
     assertFalse(binarySearchTree.contains(100));
   }
-
 }

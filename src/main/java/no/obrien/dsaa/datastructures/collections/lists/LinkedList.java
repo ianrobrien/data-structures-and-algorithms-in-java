@@ -3,7 +3,6 @@ package no.obrien.dsaa.datastructures.collections.lists;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-
 public class LinkedList<T extends Comparable<T>> implements List<T> {
 
   private int size;
@@ -57,8 +56,8 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
   @Override
   public void clear() {
     if (this.head != null) {
-      ListNode<T> previous = head;
-      ListNode<T> current = head.getNext();
+      ListNode<T> previous = this.head;
+      ListNode<T> current = this.head.getNext();
       while (current != null) {
         previous.setNext(null);
         previous = current;
@@ -80,6 +79,11 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
       current = current.getNext();
     }
     return false;
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return this.size == 0;
   }
 
   @Override

@@ -59,6 +59,11 @@ public class BinarySearchTree<T extends Comparable<T>> implements Collection<T> 
     }
   }
 
+  @Override
+  public boolean isEmpty() {
+    return this.size == 0;
+  }
+
   private boolean contains(T item, TreeNode<T> tTreeNode) {
     if (tTreeNode == null) {
       return false;
