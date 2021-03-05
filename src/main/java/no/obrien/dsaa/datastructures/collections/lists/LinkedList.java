@@ -1,6 +1,10 @@
 package no.obrien.dsaa.datastructures.collections.lists;
 
-public class LinkedList<T> implements List<T> {
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+
+public class LinkedList<T extends Comparable<T>> implements List<T> {
 
   private int size;
   private ListNode<T> head;
@@ -75,7 +79,6 @@ public class LinkedList<T> implements List<T> {
       }
       current = current.getNext();
     }
-
     return false;
   }
 
@@ -91,25 +94,11 @@ public class LinkedList<T> implements List<T> {
     return current.getValue();
   }
 
-  static class ListNode<T> {
+  @Data
+  @RequiredArgsConstructor
+  static class ListNode<T extends Comparable<T>> {
 
     private final T value;
     private ListNode<T> next;
-
-    public ListNode(T value) {
-      this.value = value;
-    }
-
-    public T getValue() {
-      return this.value;
-    }
-
-    public ListNode<T> getNext() {
-      return this.next;
-    }
-
-    public void setNext(ListNode<T> listNode) {
-      this.next = listNode;
-    }
   }
 }

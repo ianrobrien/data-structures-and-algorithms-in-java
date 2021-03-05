@@ -1,10 +1,10 @@
 package no.obrien.dsaa.datastructures.collections;
 
-public interface Collection<T> {
+public interface Collection<T extends Comparable<T>> {
 
-  void add (T item);
+  void add(T item);
 
-  void remove (T item);
+  void remove(T item);
 
   int size();
 

@@ -1,11 +1,10 @@
-package no.obrien.dsaa.datastructures.lists;
+package no.obrien.dsaa.datastructures.collections.lists;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import no.obrien.dsaa.datastructures.collections.lists.LinkedList;
 import org.junit.jupiter.api.Test;
 
 class LinkedListTest {
