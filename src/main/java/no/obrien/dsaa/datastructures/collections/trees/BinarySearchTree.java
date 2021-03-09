@@ -69,8 +69,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements Collection<T> 
       return false;
     }
     int compareToResult = item.compareTo(tTreeNode.getValue());
-    return compareToResult == 0 || this
-        .contains(item, compareToResult < 0 ? tTreeNode.getLeft() : tTreeNode.getRight());
+    return compareToResult == 0 ||
+        this.contains(item, compareToResult < 0 ? tTreeNode.getLeft() : tTreeNode.getRight());
   }
 
   @Data
