@@ -12,5 +12,11 @@ public interface Collection<T extends Comparable<T>> {
 
   boolean contains(T item);
 
-  boolean isEmpty();
+  default boolean isEmpty() {
+    return this.size() == 0;
+  }
+
+  default boolean isNotEmpty() {
+    return !this.isEmpty();
+  }
 }

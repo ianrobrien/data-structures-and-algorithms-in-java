@@ -17,4 +17,12 @@ public class ArrayUtils {
     elements[firstIndex] = elements[secondIndex];
     elements[secondIndex] = temp;
   }
+
+  public <T> T[] slice(T[] elements, int startIndex, int stopIndex) {
+    Object[] result = new Object[stopIndex - startIndex];
+    if (stopIndex >= 0) {
+      System.arraycopy(elements, startIndex, result, 0, stopIndex);
+    }
+    return (T[]) result;
+  }
 }

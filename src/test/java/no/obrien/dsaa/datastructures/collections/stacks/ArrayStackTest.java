@@ -1,6 +1,8 @@
 package no.obrien.dsaa.datastructures.collections.stacks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +12,8 @@ class ArrayStackTest {
   void testConstruction() {
     Stack<Integer> stack = new ArrayStack<>();
     assertEquals(0, stack.size());
+    assertTrue(stack.isEmpty());
+    assertFalse(stack.isNotEmpty());
   }
 
   @Test

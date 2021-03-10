@@ -10,6 +10,14 @@ import org.junit.jupiter.api.Test;
 class LinkedListTest {
 
   @Test
+  void testConstruction() {
+    LinkedList<Integer> linkedList = new LinkedList<>();
+    assertTrue(linkedList.isEmpty());
+    assertFalse(linkedList.isNotEmpty());
+    assertEquals(0, linkedList.size());
+  }
+
+  @Test
   void testAdd() {
     LinkedList<Integer> linkedList = new LinkedList<>();
     linkedList.add(0);
@@ -40,7 +48,6 @@ class LinkedListTest {
     linkedList.add(2);
     linkedList.add(3);
     linkedList.add(4);
-
 
     linkedList.remove(0); // remove from head
     assertEquals(4, linkedList.size());

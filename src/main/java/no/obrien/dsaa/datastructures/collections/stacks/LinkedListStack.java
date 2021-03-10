@@ -32,11 +32,6 @@ public class LinkedListStack<T extends Comparable<T>> implements Stack<T> {
   }
 
   @Override
-  public boolean isEmpty() {
-    return this.size() == 0;
-  }
-
-  @Override
   public void push(T item) {
     this.linkedList.add(item);
   }

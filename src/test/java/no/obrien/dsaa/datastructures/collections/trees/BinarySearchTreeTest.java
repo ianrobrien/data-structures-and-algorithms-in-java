@@ -9,8 +9,18 @@ import org.junit.jupiter.api.Test;
 class BinarySearchTreeTest {
 
   @Test
+  void testConstruction() {
+    BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+
+    assertTrue(binarySearchTree.isEmpty());
+    assertFalse(binarySearchTree.isNotEmpty());
+    assertEquals(0, binarySearchTree.size());
+  }
+
+  @Test
   void testAdd() {
     BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+
     binarySearchTree.add(5);
     binarySearchTree.add(3);
     binarySearchTree.add(7);
