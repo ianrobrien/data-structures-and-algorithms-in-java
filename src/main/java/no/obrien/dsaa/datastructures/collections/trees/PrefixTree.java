@@ -27,11 +27,12 @@ public class PrefixTree implements Collection<String> {
       this.size++;
       return;
     }
-    if (!node.getChildren().containsKey(value.charAt(keyIndex))) {
+    char key = value.charAt(keyIndex);
+    if (!node.getChildren().containsKey(key)) {
       node.getChildren()
-          .put(value.charAt(keyIndex), new PrefixTreeNode(value.substring(0, keyIndex + 1)));
+          .put(key, new PrefixTreeNode(value.substring(0, keyIndex + 1)));
     }
-    this.add(value, keyIndex + 1, node.getChildren().get(value.charAt(keyIndex)));
+    this.add(value, keyIndex + 1, node.getChildren().get(key));
   }
 
   @Override

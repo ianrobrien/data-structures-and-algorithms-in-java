@@ -6,6 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Objects;
+
 class PrefixTreeTest {
 
   @Test
@@ -32,5 +38,23 @@ class PrefixTreeTest {
     assertTrue(prefixTree.contains("cars"));
     assertTrue(prefixTree.contains("cash"));
     assertTrue(prefixTree.contains("tree"));
+  }
+
+  @Test
+  void addAllWords() {
+    PrefixTree prefixTree = new PrefixTree();
+
+    ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    try (InputStream is = classLoader.getResourceAsStream("text/words_alpha.txt");
+        InputStreamReader isr = new InputStreamReader(Objects.requireNonNull(is));
+        BufferedReader br = new BufferedReader(isr)) {
+      for (String line; (line = br.readLine()) != null; ) {
+        prefixTree.add(line);
+      }
+      assertTrue(prefixTree.contains("zoopathological"));
+      assertFalse(prefixTree.contains("zoopathoadasdlogical"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
