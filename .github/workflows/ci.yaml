@@ -6,12 +6,12 @@ on:
 jobs:
   name: Build
   runs-on: ubuntu-22.04
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'adopt'
-        java-version: '19'
-        cache: 'maven'
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '19'
+          cache: 'maven'
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
