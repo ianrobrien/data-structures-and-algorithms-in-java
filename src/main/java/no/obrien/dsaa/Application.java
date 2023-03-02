@@ -9,5 +9,4 @@ public class Application {
     // Put this here now so I can quickly access javadoc
     List<Integer> intList = new ArrayList<>();
   }
-
 }
