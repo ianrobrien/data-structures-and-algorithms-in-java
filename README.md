@@ -6,6 +6,9 @@
 
 - Linked List
 - Binary Search Tree
+- Stack
+  - Linked List
+  - Array
 
 ## Algorithms
 
