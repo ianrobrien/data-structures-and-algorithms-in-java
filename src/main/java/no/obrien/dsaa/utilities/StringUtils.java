@@ -6,7 +6,7 @@ import lombok.experimental.UtilityClass;
 public class StringUtils {
 
   public boolean isEmpty(String string) {
-    return (string == null || string.trim().length() == 0);
+    return (string == null || string.trim().isEmpty());
   }
 
 }
